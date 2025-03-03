@@ -2,10 +2,11 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: postgres-pvc
-  namespace: k8s-exam 
+  namespace: k8s-exam
+spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 10Gi
-  storageClassName: rancher-default 
+  storageClassName: rancher-default

@@ -18,6 +18,7 @@ spec:
         app: postgres-db
         env: production
     spec:
+      terminationGracePeriodSeconds: 30  # Moved to the correct location
       containers:
         - name: postgres
           image: postgres:12.0-alpine  # Updated image to match docker-compose
@@ -72,7 +73,6 @@ spec:
                 - $(POSTGRES_USER)  
             initialDelaySeconds: 5
             periodSeconds: 5
-          terminationGracePeriodSeconds: 30 
       initContainers:
         - name: init-chmod-data
           image: busybox:latest
@@ -92,4 +92,4 @@ spec:
             storage: 10Gi
         storageClassName: rancher-default
   updateStrategy:
-    type: RollingUpdate  
+    type: RollingUpdate

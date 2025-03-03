@@ -2,7 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: fastapi-app
-  namespace: k8s-exam  
+  namespace: k8s-exam
+spec:
   replicas: 3
   selector:
     matchLabels:
@@ -13,7 +14,7 @@ metadata:
         app: fastapi-app
     spec:
       containers:
-      - name: fastapi-app
-        image: ezanloren/fast-appi:latest
-        ports:
-        - containerPort: 80
+        - name: fastapi-app
+          image: ezanloren/fast-appi:latest
+          ports:
+            - containerPort: 80
