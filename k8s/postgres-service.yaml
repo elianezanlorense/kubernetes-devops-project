@@ -2,10 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: postgres-service
-  namespace: k8s-exam  git 
-  labels:
-    app: postgres-db
-    env: production
+  namespace: k8s-exam 
 spec:
   selector:
     app: postgres-db
@@ -14,3 +11,7 @@ spec:
     port: 5432
     targetPort: 5432
   type: ClusterIP
+
+  
+
+  
